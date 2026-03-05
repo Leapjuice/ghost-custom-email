@@ -1,6 +1,6 @@
 #!/bin/bash
-# LeapJuice Ghost Build Script
-# Builds and pushes the LeapJuice Ghost Custom Email Docker image
+# Leapjuice Ghost Build Script
+# Builds and pushes the Leapjuice Ghost Custom Email Docker image
 
 set -e
 
@@ -10,7 +10,7 @@ VERSION="6.20.1-leapjuice"
 DOCKERFILE="Dockerfile.leapjuice"
 
 echo "=========================================="
-echo "LeapJuice Ghost CMS Build Script"
+echo "Leapjuice Ghost CMS Build Script"
 echo "Version: $VERSION"
 echo "=========================================="
 

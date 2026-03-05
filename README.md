@@ -1,4 +1,4 @@
-# Ghost CMS - LeapJuice Custom Email Edition
+# Ghost CMS - Leapjuice Custom Email Edition
 
 <p align="center">
   <a href="https://ghost.org">
@@ -7,11 +7,11 @@
 </p>
 
 <h1 align="center">
-  LeapJuice Ghost Custom Email
+  Leapjuice Ghost Custom Email
 </h1>
 
 <p align="center">
-  <strong>Ghost CMS 6.20.1</strong> modified by LeapJuice with <strong>multiple built-in email provider options</strong> for sending newsletters.
+  <strong>Ghost CMS 6.20.1</strong> modified by Leapjuice with <strong>multiple built-in email provider options</strong> for sending newsletters.
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@
 
 ## What is This?
 
-This is a **modified version of Ghost CMS 6.20.1** created by [LeapJuice](https://leapjuice.com). It adds the ability to choose from **multiple email providers** for sending newsletters - not just Mailgun.
+This is a **modified version of Ghost CMS 6.20.1** created by [Leapjuice](https://leapjuice.com). It adds the ability to choose from **multiple email providers** for sending newsletters - not just Mailgun.
 
 Standard Ghost CMS only supports Mailgun for bulk email. This edition adds native support for:
 
@@ -86,7 +86,7 @@ We created this modified version because:
 - Docker Ready - Pre-built Docker image available
 - Open Source - Full transparency on what was modified
 - Production Ready - Optimized for production deployment
-- LeapJuice Ready - Ready for deployment on LeapJuice sovereign enterprise platform
+- Leapjuice Ready - Ready for deployment on Leapjuice sovereign enterprise platform
 
 ---
 
@@ -431,7 +431,7 @@ For transparency, here's what we changed from the original Ghost CMS:
 
 This project is based on [Ghost CMS](https://github.com/TryGhost/Ghost), which is open source under the MIT License.
 
-The LeapJuice modifications are provided as-is under the same MIT License.
+The Leapjuice modifications are provided as-is under the same MIT License.
 
 See [LICENSE](LICENSE) for details.
 
@@ -444,16 +444,16 @@ See [LICENSE](LICENSE) for details.
 - Ghost Documentation: https://ghost.org/docs/
 - Ghost Community Forum: https://forum.ghost.org/
 - Report Bugs: https://github.com/Leapjuice/ghost-custom-email/issues
-- LeapJuice Website: https://.com
+- Leapjuice Website: https://.com
 
-### About LeapJuice
+### About Leapjuice
 
-leapjuice[LeapJuice](https://leapjuice.com) is a sovereign enterprise platform that helps businesses deploy open-source software with full data ownership and control.
+leapjuice[Leapjuice](https://leapjuice.com) is a sovereign enterprise platform that helps businesses deploy open-source software with full data ownership and control.
 
 This modified Ghost edition is part of our commitment to providing flexible, transparent solutions for our customers.
 
 ---
 
 <p align="center">
-  Built with by <a href="https://leapjuice.com">LeapJuice</a>
+  Built with by <a href="https://leapjuice.com">Leapjuice</a>
 </p>

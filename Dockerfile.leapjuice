@@ -1,7 +1,7 @@
-# LeapJuice Custom Ghost CMS Dockerfile
+# Leapjuice Custom Ghost CMS Dockerfile
 # Based on Ghost v6.20.1 - Modified with multiple email provider support
 
-# Production Dockerfile for LeapJuice Ghost
+# Production Dockerfile for Leapjuice Ghost
 # Includes support for Mailgun, SendGrid, and SMTP email providers
 
 ARG NODE_VERSION=22.18.0

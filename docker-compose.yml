@@ -1,7 +1,7 @@
-# LeapJuice Ghost CMS with Custom Email Providers
+# Leapjuice Ghost CMS with Custom Email Providers
 # Version: 6.20.1-leapjuice
 #
-# This Docker Compose file makes it easy to run LeapJuice Ghost with support for
+# This Docker Compose file makes it easy to run Leapjuice Ghost with support for
 # Mailgun, SendGrid, or SMTP email providers for newsletters.
 #
 # Quick Start:

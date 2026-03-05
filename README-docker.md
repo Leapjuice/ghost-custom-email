@@ -1,11 +1,11 @@
-# LeapJuice Ghost CMS - Custom Email Edition
+# Leapjuice Ghost CMS - Custom Email Edition
 
 ![Ghost Version](https://img.shields.io/badge/Ghost-6.20.1-blue)
-![LeapJuice Edition](https://img.shields.io/badge/LeapJuice-Custom%20Email-orange)
+![Leapjuice Edition](https://img.shields.io/badge/Leapjuice-Custom%20Email-orange)
 
 ## Overview
 
-This is **LeapJuice Ghost CMS v6.20.1**, a modified version of the official Ghost 6.20.1 release, enhanced with **multiple built-in email provider options** for sending newsletters.
+This is **Leapjuice Ghost CMS v6.20.1**, a modified version of the official Ghost 6.20.1 release, enhanced with **multiple built-in email provider options** for sending newsletters.
 
 ### Features
 
@@ -13,11 +13,11 @@ This is **LeapJuice Ghost CMS v6.20.1**, a modified version of the official Ghos
 - ✅ **Multiple Email Providers** - Choose from Mailgun, SendGrid, or SMTP
 - ✅ **Easy Admin Configuration** - Configure email directly from Ghost admin panel
 - ✅ **Production Ready** - Optimized Docker image for deployment
-- ✅ **Sovereign Enterprise Ready** - Deploy on your own infrastructure with LeapJuice
+- ✅ **Sovereign Enterprise Ready** - Deploy on your own infrastructure with Leapjuice
 
 ## What's Different?
 
-Standard Ghost CMS only supports **Mailgun** for bulk email newsletter delivery. This LeapJuice edition adds:
+Standard Ghost CMS only supports **Mailgun** for bulk email newsletter delivery. This Leapjuice edition adds:
 
 | Provider | Description | Best For |
 |----------|-------------|----------|
@@ -180,17 +180,17 @@ Access Admin at: `http://localhost:2368/ghost`
 ### Need Help?
 
 - [Ghost Documentation](https://ghost.org/docs/)
-- [LeapJuice Support](https://leapjuice.com/support/)
+- [Leapjuice Support](https://leapjuice.com/support/)
 
-## Deployment with LeapJuice
+## Deployment with Leapjuice
 
-This container is optimized for deployment on **LeapJuice** - the sovereign enterprise platform. Deploy with confidence knowing your data stays in your control.
+This container is optimized for deployment on **Leapjuice** - the sovereign enterprise platform. Deploy with confidence knowing your data stays in your control.
 
 Learn more at: https://leapjuice.com
 
 ## License
 
-This image is based on Ghost CMS, which is open source under the MIT license. The modifications made by LeapJuice are provided as-is.
+This image is based on Ghost CMS, which is open source under the MIT license. The modifications made by Leapjuice are provided as-is.
 
 Ghost CMS License: https://github.com/TryGhost/Ghost/blob/main/LICENSE
 
@@ -201,4 +201,4 @@ Ghost CMS License: https://github.com/TryGhost/Ghost/blob/main/LICENSE
 
 ---
 
-**LeapJuice Ghost Custom Email** - Built with ❤️ by LeapJuice
+**Leapjuice Ghost Custom Email** - Built with ❤️ by Leapjuice
