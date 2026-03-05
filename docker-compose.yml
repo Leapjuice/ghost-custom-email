@@ -1,0 +1,139 @@
+# LeapJuice Ghost CMS with Custom Email Providers
+# Version: 6.20.1-leapjuice
+#
+# This Docker Compose file makes it easy to run LeapJuice Ghost with support for
+# Mailgun, SendGrid, or SMTP email providers for newsletters.
+#
+# Quick Start:
+#   1. Copy this file to your server
+#   2. Update the environment variables below
+#   3. Run: docker-compose up -d
+#
+# For more details, see: https://github.com/leapjuice/ghost-custom-email
+
+version: '3.8'
+
+services:
+  ghost:
+    image: leapjuice/ghost-custom-email:6.20.1-leapjuice
+    container_name: leapjuice-ghost
+    restart: unless-stopped
+    ports:
+      - "2368:2368"  # Ghost admin interface
+    environment:
+      # Database - Using SQLite (built-in) for simplicity
+      # For production with multiple instances, use MySQL
+      database__client: sqlite3
+      database__connection__filename: content/data/ghost.db
+
+      # Site URL - CHANGE THIS to your domain!
+      url: http://localhost:2368
+
+      # Email Provider Configuration - CHOOSE ONE:
+      # ----------------------------------------
+      # Option 1: Mailgun (default)
+      # mailgun__domain: your-mailgun-domain.com
+      # mailgun__api_key: your-mailgun-private-api-key
+      # mailgun__base_url: https://api.mailgun.net/v3  (or https://api.eu.mailgun.net/v3 for EU)
+
+      # Option 2: SendGrid
+      # email_provider: sendgrid
+      # sendgrid_api_key: your-sendgrid-api-key
+
+      # Option 3: SMTP
+      # email_provider: smtp
+      # smtp_host: smtp.yourserver.com
+      # smtp_port: 587
+      # smtp_user: your-username
+      # smtp_password: your-password
+      # smtp_secure: true  # Use TLS (false for SSL/port 465)
+
+      # Optional: Email tracking
+      email_track_opens: "true"
+      email_track_clicks: "true"
+
+      # Node memory limit (adjust for high traffic)
+      NODE_MEMORY_LIMIT: 512M
+
+    volumes:
+      # Persist Ghost content (themes, images, data)
+      - ghost-content:/home/ghost/content
+      - ghost-logs:/home/ghost/log
+
+    networks:
+      - ghost-network
+
+volumes:
+  ghost-content:
+    driver: local
+  ghost-logs:
+    driver: local
+
+networks:
+  ghost-network:
+    driver: bridge
+
+# ==============================================================================
+# USAGE INSTRUCTIONS
+# ==============================================================================
+#
+# 1. BASIC SETUP (Mailgun):
+#    ------------------------
+#    Create a .env file with:
+#    url=http://your-domain.com
+#    mailgun__domain=your-mailgun-domain.com
+#    mailgun__domain=mg.yourdomain.com
+#    mailgun__api_key=key-xxxxxxxxxxxxxxxxxxxx
+#
+#    Then run: docker-compose up -d
+#
+# 2. SENDGRID SETUP:
+#    -----------------
+#    Create a .env file with:
+#    url=http://your-domain.com
+#    email_provider=sendgrid
+#    sendgrid_api_key=SG.xxxxxxxxxxxxxxxxxxxxxxxx
+#
+#    Then run: docker-compose up -d
+#
+# 3. SMTP SETUP (Gmail, Outlook, etc.):
+#    -------------------------------------
+#    Create a .env file with:
+#    url=http://your-domain.com
+#    email_provider=smtp
+#    smtp_host=smtp.gmail.com
+#    smtp_port=587
+#    smtp_user=your-email@gmail.com
+#    smtp_password=your-app-password
+#    smtp_secure=true
+#
+#    Note: For Gmail, you need an "App Password", not your regular password.
+#    Enable 2FA on your Google account, then create an App Password.
+#
+# 4. ACCESSING GHOST ADMIN:
+#    -------------------------
+#    After starting, access the admin panel at:
+#    http://localhost:2368/ghost
+#
+#    Or if you set a custom url:
+#    http://your-domain.com/ghost
+#
+# 5. CONFIGURING EMAIL IN ADMIN:
+#    ------------------------------
+#    Once logged in to Ghost Admin:
+#    1. Go to Settings > Email newsletter
+#    2. You'll see "Email Provider" instead of just Mailgun
+#    3. Select your provider (Mailgun/SendGrid/SMTP)
+#    4. Enter your credentials
+#    5. Save and test!
+#
+# 6. CUSTOM DOMAIN WITH HTTPS:
+#    ---------------------------
+#    Use a reverse proxy like Caddy, Nginx, or Traefik.
+#    Example with Caddyfile:
+#    -------------
+#    your-domain.com {
+#        reverse_proxy localhost:2368
+#    }
+#
+# ==============================================================================

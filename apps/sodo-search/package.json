@@ -1,0 +1,105 @@
+{
+  "name": "@tryghost/sodo-search",
+  "version": "1.8.6",
+  "license": "MIT",
+  "repository": "https://github.com/TryGhost/Ghost",
+  "author": "Ghost Foundation",
+  "files": [
+    "umd/",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "flexsearch": "0.8.153",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "scripts": {
+    "dev": "concurrently \"vite preview -l silent\" \"yarn build:watch\" \"yarn tailwind\"",
+    "build": "vite build && yarn tailwind:base",
+    "build:watch": "vite build --watch",
+    "tailwind": "yarn tailwind:base --watch ",
+    "tailwind:base": "npx tailwindcss -i ./src/index.css -o ./umd/main.css --minify",
+    "test": "vitest run",
+    "test:ci": "yarn test --coverage",
+    "test:unit": "yarn test:ci",
+    "lint": "eslint src --ext .js --cache",
+    "preship": "yarn lint",
+    "ship": "node ../../.github/scripts/release-apps.js",
+    "prepublishOnly": "yarn build"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2022
+    },
+    "extends": [
+      "plugin:ghost/browser",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "ghost"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "ghost/filenames/match-regex": [
+        "error",
+        "^[a-z0-9.-]+$",
+        false
+      ],
+      "ghost/sort-imports-es6-autofix/sort-imports-es6": [
+        "error",
+        {
+          "memberSyntaxSortOrder": [
+            "none",
+            "all",
+            "single",
+            "multiple"
+          ]
+        }
+      ]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "cobertura",
+      "text-summary",
+      "html"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/react": "12.1.5",
+    "@vitejs/plugin-react": "4.7.0",
+    "jsdom": "28.1.0",
+    "nock": "13.5.6",
+    "vite": "5.4.20",
+    "vite-plugin-svgr": "3.3.0",
+    "vitest": "1.6.1"
+  }
+}
